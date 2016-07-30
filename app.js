@@ -3,25 +3,21 @@
 var TelegramBot = require('node-telegram-bot-api');
 
 var TOKEN = '241137685:AAGz5moUy-Wy7fooqRLUffjs7osFozpJ3zs';
-var USER = 'USER_ID';
 
-var bot = new TelegramBot(TOKEN, {polling: {timeout: 1, interval: 100}});
+var port = process.env.OPENSHIFT_NODEJS_PORT;
+var host = process.env.OPENSHIFT_NODEJS_IP;
+var domain = process.env.OPENSHIFT_APP_DNS;
 
-var opts = {
-	reply_murkup: JSON.stringify(
-		{
-			force_reply: true
-		}
-	)};
+var bot = new TelegramBot(TOKEN, {webHook: {port: port, host: host}});
+// OpenShift enroutes :443 request to OPENSHIFT_NODEJS_PORT
+bot.setWebHook(domain+':443/bot'+token);
+bot.on('message', function (msg) {
+  var chatId = msg.chat.id;
+  bot.sendMessage(chatId, "I'm alive!");
+});
 
-bot.sendMessage(USER,  'How old r u?', opts)
-	.then(function (sended) {
-		var chatId = sended.chat.id;
-		var messageId = sended.message_id;
-		bot.onReplyToMessage(chatId, messageId, function (message) {
-			console.log('User is %s years old', message.text);
-		});
-	});
+
+
 /**
 
 const Telegram = require('node-telegram-bot-api')
