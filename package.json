@@ -1,0 +1,11 @@
+{
+  "name": "underBot",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "node-telegram-bot-api":"~0.23.3"
+  }
+}
