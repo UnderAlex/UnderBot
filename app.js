@@ -2,7 +2,7 @@
 
 const Telegram = require('node-telegram-bot-api')
 const TelegramBaseController = Telegram.TelegramBaseController
-const tg = new Telegram.Telegram('YOUR_TOKEN')
+const tg = new Telegram.Telegram('241137685:AAGz5moUy-Wy7fooqRLUffjs7osFozpJ3zs')
 
 class PingController extends TelegramBaseController {
     /**
