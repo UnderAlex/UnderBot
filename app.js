@@ -1,6 +1,6 @@
 'use strict'
 
-const Telegram = require('telegram-node-bot')
+const Telegram = require('node-telegram-bot-api')
 const TelegramBaseController = Telegram.TelegramBaseController
 const tg = new Telegram.Telegram('YOUR_TOKEN')
 
