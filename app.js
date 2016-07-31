@@ -12,8 +12,8 @@ var bot = new TelegramBot(token, {polling: true});
 // Matches /echo [whatever]
 bot.onText(/\/echo (.+)/, function (msg, match) {
   var fromId = msg.from.id;
-  var resp = match[1];
-  bot.sendMessage(fromId, resp);
+  var shuffled = match[1].split('').sort(function(){return 0.5-Math.random()}).join('');
+  bot.sendMessage(fromId, shuffled);
 });
 
 // Any kind of message
