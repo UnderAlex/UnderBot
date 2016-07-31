@@ -1,0 +1,81 @@
+ArhiwArius@HomeLand MINGW64 /c/openserv/openserver/domains/UnderBot (master)
+$ git push dokku master
+Counting objects: 6, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 1.49 KiB | 0 bytes/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+-----> Cleaning up...
+-----> Building underbot from herokuish...
+-----> Adding BUILD_ENV to build environment...
+-----> Node.js app detected
+
+-----> Creating runtime environment
+
+       NPM_CONFIG_LOGLEVEL=error
+       NPM_CONFIG_PRODUCTION=true
+       NODE_ENV=production
+       NODE_MODULES_CACHE=true
+
+-----> Installing binaries
+       engines.node (package.json):  unspecified
+       engines.npm (package.json):   unspecified (use default)
+
+       Resolving node version (latest stable) via semver.io...
+       Downloading and installing node 5.11.1...
+       Using default npm version: 3.8.6
+
+-----> Restoring cache
+       Loading 2 from cacheDirectories (default):
+       - node_modules
+       - bower_components (not cached - skipping)
+
+-----> Building dependencies
+       Pruning any extraneous modules
+       Installing node modules (package.json)
+
+-----> Caching build
+       Clearing previous node cache
+       Saving 2 cacheDirectories (default):
+       - node_modules
+       - bower_components (nothing to cache)
+
+-----> Build succeeded!
+       `-- node-telegram-bot-api@0.23.3 invalid
+
+       addons: []
+       default_process_types:
+       web: npm start
+-----> Discovering process types
+       Default types for  -> web
+-----> Releasing underbot (dokku/underbot:latest)...
+-----> Deploying underbot (dokku/underbot:latest)...
+-----> Attempting to run scripts.dokku.predeploy from app.json (if defined)
+-----> App Procfile file found (/home/dokku/underbot/DOKKU_PROCFILE)
+-----> DOKKU_SCALE file found (/home/dokku/underbot/DOKKU_SCALE)
+=====> web=1
+-----> Attempting pre-flight checks
+       For more efficient zero downtime deployments, create a file CHECKS.
+       See http://dokku.viewdocs.io/dokku/deployment/zero-downtime-deploys/ for examples
+       CHECKS file not found in container: Running simple container check...
+-----> Waiting for 10 seconds ...
+-----> Default container check successful!
+-----> Running post-deploy
+-----> Attempting to run scripts.dokku.postdeploy from app.json (if defined)
+-----> Found previous container(s) (f024eb8c8c73) named underbot.web.1
+=====> renaming container (f024eb8c8c73) underbot.web.1 to underbot.web.1.1469917610
+=====> renaming container (da611c9b650d) condescending_heyrovsky to underbot.web.1
+-----> VHOST support disabled. Skipping domains setup
+-----> Creating http nginx.conf
+-----> Running nginx-pre-reload
+       Reloading nginx
+-----> Setting config vars
+       DOKKU_APP_RESTORE: 1
+-----> Shutting down old containers in 60 seconds
+=====> f024eb8c8c73387f52dd25d72ec73e4e4ee7a27a5b5daf6cd103b3d3709a547e
+=====> Application deployed:
+       http://Dokku-on-1404.071516-351:48665
+
+To dokku@188.166.0.71:underbot
+   8a6c1c8..d790e1b  master -> master
+
